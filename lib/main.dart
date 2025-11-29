@@ -61,6 +61,8 @@ class SorvilApp extends StatelessWidget {
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
 
+  static const String _assetPath = 'assets/images/app_icon.png';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,20 +72,18 @@ class LandingScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.library_books, size: 100, color: Colors.brown[700]),
-              const SizedBox(height: 10),
-              const Text(
-                'SORVIL',
-                style: TextStyle(
-                  fontSize: 48,
-                  fontFamily: 'Serif',
-                  fontWeight: FontWeight.w400,
-                  color: Colors.black,
+              Image.asset(
+                _assetPath,
+                height: 300,
+                width: 300,
+                errorBuilder: (c, e, s) => Icon(
+                  Icons.library_books,
+                  size: 100,
+                  color: Colors.brown[700],
                 ),
               ),
-              const SizedBox(height: 10),
               Text(
-                'Seu catálogo de livros',
+                'Seu catálogo de livros pessoal',
                 style: TextStyle(fontSize: 18, color: Colors.grey[800]),
               ),
               const SizedBox(height: 40),
@@ -92,7 +92,7 @@ class LandingScreen extends StatelessWidget {
                 height: 50,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF333333),
+                    backgroundColor: const Color(0xFF6FDC6F),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
